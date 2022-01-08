@@ -1,0 +1,36 @@
+{
+  "name": "trade-robot",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "16.13.1"
+  },
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "e2e": "lerna run e2e",
+    "lint": "lerna run lint"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "@nestjs/cli": "^8.1.6",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-unicorn": "^40.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "lerna": "^4.0.0",
+    "typescript": "^4.5.4",
+    "ts-node": "^10.4.0"
+  }
+}
