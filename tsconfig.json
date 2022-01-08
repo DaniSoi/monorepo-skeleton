@@ -14,6 +14,8 @@
     "incremental": false,
     "resolveJsonModule": true,
     "strictPropertyInitialization": false,
-    "typeRoots": ["./node_modules/@types"]
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   }
 }
