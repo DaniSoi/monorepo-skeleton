@@ -1,4 +1,5 @@
-import { Injectable, HttpService } from '@nestjs/common'
+import { Injectable } from '@nestjs/common'
+import { HttpService } from '@nestjs/axios'
 import { AxiosRequestConfig, AxiosResponse } from 'axios'
 import { retryBackoff, RetryBackoffConfig } from 'backoff-rxjs'
 
@@ -6,9 +7,7 @@ const defaultRetryConfig: RetryBackoffConfig = {
     initialInterval: 100, // 100 ms
     maxInterval: 60 * 60 * 1000, // 1 hour
     maxRetries: 5,
-    shouldRetry: (error) => {
-        return error?.response?.status >= 500
-    }
+    shouldRetry: error => error?.response?.status >= 500
 }
 
 @Injectable()
@@ -21,7 +20,7 @@ export class InternalHttpService {
         url: string,
         config?: AxiosRequestConfig,
         retryConfig: RetryBackoffConfig = defaultRetryConfig
-    ): Promise<AxiosResponse<T> | undefined> {
+    ): Promise<AxiosResponse<T>> {
         return this.httpService.get<T>(url, config)
             .pipe(retryBackoff(retryConfig))
             .toPromise()
@@ -32,8 +31,8 @@ export class InternalHttpService {
         data?: any,
         config?: AxiosRequestConfig,
         retryConfig: RetryBackoffConfig = defaultRetryConfig
-    ): Promise<AxiosResponse<T> | undefined> {
-        return this.httpService.post(url, data, config)
+    ): Promise<AxiosResponse<T>> {
+        return this.httpService.post<T>(url, data, config)
             .pipe(retryBackoff(retryConfig))
             .toPromise()
     }
@@ -43,7 +42,7 @@ export class InternalHttpService {
         data?: any,
         config?: AxiosRequestConfig,
         retryConfig: RetryBackoffConfig = defaultRetryConfig
-    ): Promise<AxiosResponse<T> | undefined> {
+    ): Promise<AxiosResponse<T>> {
         return this.httpService.put<T>(url, data, config)
             .pipe(retryBackoff(retryConfig))
             .toPromise()
@@ -54,7 +53,7 @@ export class InternalHttpService {
         data?: any,
         config?: AxiosRequestConfig,
         retryConfig: RetryBackoffConfig = defaultRetryConfig
-    ): Promise<AxiosResponse<T> | undefined> {
+    ): Promise<AxiosResponse<T>> {
         return this.httpService.patch<T>(url, data, config)
             .pipe(retryBackoff(retryConfig))
             .toPromise()
@@ -64,7 +63,7 @@ export class InternalHttpService {
         url: string,
         config?: AxiosRequestConfig,
         retryConfig: RetryBackoffConfig = defaultRetryConfig
-    ): Promise<AxiosResponse<T> | undefined> {
+    ): Promise<AxiosResponse<T>> {
         return this.httpService.delete<T>(url, config)
             .pipe(retryBackoff(retryConfig))
             .toPromise()

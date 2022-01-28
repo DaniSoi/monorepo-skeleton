@@ -18,6 +18,9 @@
     "e2e": "lerna run e2e",
     "lint": "lerna run lint"
   },
+  "resolutions": {
+    "axios": "~0.25.0"
+  },
   "devDependencies": {
     "@types/jest": "^27.4.0",
     "@typescript-eslint/eslint-plugin": "^5.9.0",

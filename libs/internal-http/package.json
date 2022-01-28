@@ -20,6 +20,7 @@
     "prebuild": "rimraf dist"
   },
   "dependencies": {
+    "@nestjs/axios": "^0.0.5",
     "@nestjs/common": "^7.6.12",
     "backoff-rxjs": "^6.5.7"
   }
