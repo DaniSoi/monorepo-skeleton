@@ -1,0 +1,28 @@
+{
+  "name": "@example/config",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*",
+    "*.md"
+  ],
+  "scripts": {
+    "start:dev": "tsc -w",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "lint": "eslint \"**/*.ts\" --fix",
+    "prebuild": "rimraf dist"
+  },
+  "dependencies": {
+    "@nestjs/common": "^8.2.4",
+    "@types/node": "^16.6.0",
+    "joi": "^17.5.0",
+    "lodash": "^4.17.21"
+  }
+}
