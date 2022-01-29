@@ -20,6 +20,6 @@
     "prebuild": "rimraf dist"
   },
   "dependencies": {
-    "@nestjs/common": "^7.6.12"
+    "@nestjs/common": "^8.2.6"
   }
 }

@@ -20,7 +20,7 @@ export class InternalHttpService {
         url: string,
         config?: AxiosRequestConfig,
         retryConfig: RetryBackoffConfig = defaultRetryConfig
-    ): Promise<AxiosResponse<T>> {
+    ): Promise<AxiosResponse<T> | undefined> {
         return this.httpService.get<T>(url, config)
             .pipe(retryBackoff(retryConfig))
             .toPromise()
@@ -31,7 +31,7 @@ export class InternalHttpService {
         data?: any,
         config?: AxiosRequestConfig,
         retryConfig: RetryBackoffConfig = defaultRetryConfig
-    ): Promise<AxiosResponse<T>> {
+    ): Promise<AxiosResponse<T> | undefined> {
         return this.httpService.post<T>(url, data, config)
             .pipe(retryBackoff(retryConfig))
             .toPromise()
@@ -42,7 +42,7 @@ export class InternalHttpService {
         data?: any,
         config?: AxiosRequestConfig,
         retryConfig: RetryBackoffConfig = defaultRetryConfig
-    ): Promise<AxiosResponse<T>> {
+    ): Promise<AxiosResponse<T> | undefined> {
         return this.httpService.put<T>(url, data, config)
             .pipe(retryBackoff(retryConfig))
             .toPromise()
@@ -53,7 +53,7 @@ export class InternalHttpService {
         data?: any,
         config?: AxiosRequestConfig,
         retryConfig: RetryBackoffConfig = defaultRetryConfig
-    ): Promise<AxiosResponse<T>> {
+    ): Promise<AxiosResponse<T> | undefined> {
         return this.httpService.patch<T>(url, data, config)
             .pipe(retryBackoff(retryConfig))
             .toPromise()
@@ -63,7 +63,7 @@ export class InternalHttpService {
         url: string,
         config?: AxiosRequestConfig,
         retryConfig: RetryBackoffConfig = defaultRetryConfig
-    ): Promise<AxiosResponse<T>> {
+    ): Promise<AxiosResponse<T> | undefined> {
         return this.httpService.delete<T>(url, config)
             .pipe(retryBackoff(retryConfig))
             .toPromise()

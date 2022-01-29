@@ -20,7 +20,7 @@
     "prebuild": "rimraf dist"
   },
   "dependencies": {
-    "@nestjs/common": "^8.2.4",
+    "@nestjs/common": "^8.2.6",
     "@types/node": "^16.6.0",
     "joi": "^17.5.0",
     "lodash": "^4.17.21"
