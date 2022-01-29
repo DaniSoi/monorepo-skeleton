@@ -9,12 +9,12 @@ import { configValidation } from './utils'
 @Global()
 @Module({
     imports: [
-        ConfigHostModule
+        ConfigHostModule,
     ],
     exports: [
         ConfigHostModule,
-        ConfigService
-    ]
+        ConfigService,
+    ],
 })
 export class ConfigModule {
     static readonly logger = new Logger(ConfigModule.name)
@@ -27,13 +27,13 @@ export class ConfigModule {
             providers: [
                 {
                     provide: 'CONFIG',
-                    useValue: config
+                    useValue: config,
                 },
-                ConfigService
+                ConfigService,
             ],
             exports: [
-                ConfigService
-            ]
+                ConfigService,
+            ],
         }
     }
 }

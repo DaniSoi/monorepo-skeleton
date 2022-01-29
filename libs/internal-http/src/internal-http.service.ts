@@ -7,7 +7,7 @@ const defaultRetryConfig: RetryBackoffConfig = {
     initialInterval: 100, // 100 ms
     maxInterval: 60 * 60 * 1000, // 1 hour
     maxRetries: 5,
-    shouldRetry: error => error?.response?.status >= 500
+    shouldRetry: error => error?.response?.status >= 500,
 }
 
 @Injectable()

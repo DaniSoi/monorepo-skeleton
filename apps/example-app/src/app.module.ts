@@ -12,10 +12,10 @@ import config, { configSchema } from './config'
         ConfigModule.forRoot(config(), configSchema),
     ],
     controllers: [
-        AppController
+        AppController,
     ],
     providers: [
-        AppService
-    ]
+        AppService,
+    ],
 })
 export class AppModule {}

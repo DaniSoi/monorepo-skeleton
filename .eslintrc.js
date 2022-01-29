@@ -135,6 +135,7 @@ module.exports = {
     'max-lines': ['error', 400],
     '@typescript-eslint/quotes': ['error', 'single', { 'allowTemplateLiterals': true }],
     'array-bracket-spacing': ['error', 'always'],
+    'comma-dangle': ['error', 'always-multiline'],
     'comma-spacing': ['error', { 'before': false, 'after': true }],
     'key-spacing': ['error', { 'afterColon': true }],
     'object-curly-spacing': ['error', 'always'],

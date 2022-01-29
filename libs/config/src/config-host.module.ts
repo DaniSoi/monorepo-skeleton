@@ -5,11 +5,11 @@ import { Global, Module } from '@nestjs/common'
     providers: [
         {
             provide: 'CONFIG',
-            useFactory: () => ({})
-        }
+            useFactory: () => ({}),
+        },
     ],
     exports: [
-        'CONFIG'
-    ]
+        'CONFIG',
+    ],
 })
 export class ConfigHostModule {}
