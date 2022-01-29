@@ -47,7 +47,7 @@ export const configSchema = Joi.object({
 
 #### NOTE: each variable that is being added to the config file, should exist in the schema as well   
 
-### using ConfigModel in the app level 
+### using ConfigModule in the app level 
 
 ```ecmascript 6
 import { Module } from '@nestjs/common'
@@ -88,7 +88,7 @@ export class SomeService {
 ```
 #### NOTE: this.configService.get(path?) it is possible to give the get function a path, and it returns the specific path in the object (or undefined if path not found). If path is not given, the complete config object will be returned.  
 
-### Using ConfigModel in libs level 
+### Using ConfigModule in libs level 
 
 Each library should have a `config.schema.ts`
 This schema should contain all the env variables that this library needs
